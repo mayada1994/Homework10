@@ -1,10 +1,11 @@
-package com.example.mayada.geekhubandroidprofiler
+package com.example.mayada.geekhubandroidprofiler.ui.main
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.example.mayada.geekhubandroidprofiler.R
 
 class ItemAdapter(val items: ArrayList<Item>): RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
 

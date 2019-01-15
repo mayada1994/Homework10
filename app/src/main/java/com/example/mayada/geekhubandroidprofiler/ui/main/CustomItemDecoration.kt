@@ -1,9 +1,10 @@
-package com.example.mayada.geekhubandroidprofiler
+package com.example.mayada.geekhubandroidprofiler.ui.main
 
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.drawable.Drawable
 import android.support.v7.widget.RecyclerView
+import com.example.mayada.geekhubandroidprofiler.R
 
 class CustomItemDecoration(context: Context) : RecyclerView.ItemDecoration() {
     private val mDivider: Drawable

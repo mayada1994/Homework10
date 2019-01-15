@@ -1,9 +1,10 @@
-package com.example.mayada.geekhubandroidprofiler
+package com.example.mayada.geekhubandroidprofiler.ui.main
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import com.example.mayada.geekhubandroidprofiler.R
 
 class MainActivity : AppCompatActivity() {
 
