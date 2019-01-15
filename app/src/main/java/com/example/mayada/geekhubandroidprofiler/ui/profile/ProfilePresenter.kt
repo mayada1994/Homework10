@@ -27,7 +27,7 @@ class ProfilePresenter(
                 catch (e: NullPointerException)
                 {
                     view.profileNotFound()
-                    Log.e("GitHubResponse", "NullPointerException")
+                    Log.e("GitHubResponse", response.message())
                 }
             }
 

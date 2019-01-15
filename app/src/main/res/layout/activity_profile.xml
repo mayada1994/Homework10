@@ -5,7 +5,8 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ProfileActivity">
+        android:background="@drawable/profile_background"
+        tools:context=".ui.profile.ProfileActivity">
 
     <LinearLayout
             android:layout_width="match_parent"
@@ -19,14 +20,17 @@
             android:visibility="gone"
             android:gravity="center">
         <ImageView
-                android:layout_width="200dp"
-                android:layout_height="200dp"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
                 android:src="@drawable/placeholder"/>
 
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:fontFamily="@font/playfair_display_black"
+                android:textColor="@color/primaryText"
+                android:textSize="40sp"
                 android:text="@string/profile_not_found"/>
     </LinearLayout>
     <android.support.constraint.ConstraintLayout
@@ -34,14 +38,15 @@
             android:layout_height="match_parent"
             android:id="@+id/profile_layout">
         <ImageView
-                android:layout_width="200dp"
-                android:layout_height="200dp"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toTopOf="@id/basic_profile_info"
                 android:id="@+id/profile_image"
                 android:src="@drawable/placeholder"/>
+
         <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -51,45 +56,96 @@
                 app:layout_constraintBottom_toBottomOf="@id/additional_profile_info"
                 android:id="@+id/basic_profile_info">
 
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintBottom_toTopOf="@id/profile_id"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:id="@+id/profile_name"
-                    tools:text="Name"/>
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="horizontal"
+                          android:id="@+id/name_layout"
+                          android:gravity="center"
+                          app:layout_constraintEnd_toEndOf="parent"
+                          app:layout_constraintStart_toStartOf="parent"
+                          app:layout_constraintBottom_toTopOf="@id/id_layout"
+                          app:layout_constraintTop_toTopOf="parent">
+                <TextView
+                        style="@style/TextTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Name: "/>
+                <TextView
+                        style="@style/TextRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/profile_name"
+                        tools:text="Octocat"/>
+            </LinearLayout>
 
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/profile_name"
-                    app:layout_constraintBottom_toBottomOf="@id/profile_nickname"
-                    android:id="@+id/profile_id"
-                    tools:text="Id"/>
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="horizontal"
+                          android:id="@+id/id_layout"
+                          android:gravity="center"
+                          app:layout_constraintEnd_toEndOf="parent"
+                          app:layout_constraintStart_toStartOf="parent"
+                          app:layout_constraintTop_toTopOf="@id/name_layout"
+                          app:layout_constraintBottom_toBottomOf="@id/nickname_layout">
+                <TextView
+                        style="@style/TextTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Id: "/>
+                <TextView
+                        style="@style/TextRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/profile_id"
+                        tools:text="125434"/>
+            </LinearLayout>
 
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/profile_id"
-                    app:layout_constraintBottom_toBottomOf="@id/profile_link"
-                    android:id="@+id/profile_nickname"
-                    tools:text="Nickname"/>
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="horizontal"
+                          android:id="@+id/nickname_layout"
+                          android:gravity="center"
+                          app:layout_constraintEnd_toEndOf="parent"
+                          app:layout_constraintStart_toStartOf="parent"
+                          app:layout_constraintTop_toTopOf="@id/id_layout"
+                          app:layout_constraintBottom_toBottomOf="@id/link_layout">
+                <TextView
+                        style="@style/TextTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nickname: "/>
+                <TextView
+                        style="@style/TextRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/profile_nickname"
+                        tools:text="octocat"/>
+            </LinearLayout>
 
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/profile_nickname"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:id="@+id/profile_link"
-                    tools:text="https://api.github.com/users/octocat"/>
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="horizontal"
+                          android:id="@+id/link_layout"
+                          android:gravity="center"
+                          app:layout_constraintEnd_toEndOf="parent"
+                          app:layout_constraintStart_toStartOf="parent"
+                          app:layout_constraintTop_toTopOf="@id/nickname_layout"
+                          app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                        style="@style/TextTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Profile link: "/>
+
+                <TextView
+                        style="@style/TextRegular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/profile_link"
+                        tools:text="https://api.github.com/users/octocat"/>
+            </LinearLayout>
+
         </android.support.constraint.ConstraintLayout>
 
         <LinearLayout
@@ -108,10 +164,12 @@
                     android:orientation="vertical"
                     android:gravity="center">
                 <TextView
+                        style="@style/TextTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/repos"/>
                 <TextView
+                        style="@style/TextRegular"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/profile_repos_amount"
@@ -125,10 +183,12 @@
                     android:orientation="vertical"
                     android:gravity="center">
                 <TextView
+                        style="@style/TextTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/gists"/>
                 <TextView
+                        style="@style/TextRegular"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/profile_gists_amount"
@@ -142,10 +202,12 @@
                     android:orientation="vertical"
                     android:gravity="center">
                 <TextView
+                        style="@style/TextTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/followers"/>
                 <TextView
+                        style="@style/TextRegular"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/profile_followers_amount"
@@ -159,10 +221,12 @@
                     android:orientation="vertical"
                     android:gravity="center">
                 <TextView
+                        style="@style/TextTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/following"/>
                 <TextView
+                        style="@style/TextRegular"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/profile_following_amount"

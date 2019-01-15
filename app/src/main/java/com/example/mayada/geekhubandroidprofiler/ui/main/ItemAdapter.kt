@@ -6,8 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
-import com.example.mayada.geekhubandroidprofiler.ProfileActivity
+import com.example.mayada.geekhubandroidprofiler.ui.profile.ProfileActivity
 import com.example.mayada.geekhubandroidprofiler.R
 
 class ItemAdapter(val items: ArrayList<Item>) : RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
