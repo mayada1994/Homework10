@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">GeekHub Android Profiler</string>
+    <string name="repos">Repos</string>
+    <string name="gists">Gists</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
 </resources>

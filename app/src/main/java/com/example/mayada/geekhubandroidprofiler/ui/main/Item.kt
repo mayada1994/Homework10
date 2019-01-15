@@ -1,4 +1,4 @@
 package com.example.mayada.geekhubandroidprofiler.ui.main
 
-class Item (val text:String, val userName:String)
-//class Item (val text:String, val imageResourceId:Int)
+class Item (val userName:String, val userLogin:String)
+//class Item (val userName:String, val imageResourceId:Int)
