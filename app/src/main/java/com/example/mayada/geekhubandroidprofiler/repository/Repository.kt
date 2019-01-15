@@ -1,5 +1,6 @@
 package com.geekhub.retrofitexample.data.repository
 
+import com.example.mayada.geekhubandroidprofiler.network.AuthResponse
 import com.geekhub.retrofitexample.data.model.GitHubResponse
 import com.geekhub.retrofitexample.data.network.GitHubService
 import retrofit2.Call
@@ -18,5 +19,9 @@ class Repository {
 
     fun getData(user: String): Call<GitHubResponse> {
         return gitHubService.getCurrentProfile(user)
+    }
+
+    fun authorize(authHeader: String): Call<AuthResponse> {
+        return gitHubService.authorizeUser(authHeader)
     }
 }
