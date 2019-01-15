@@ -6,4 +6,5 @@ import com.geekhub.retrofitexample.data.model.GitHubResponse
 interface ProfileView {
 
     fun showProfile(user: GitHubResponse)
+    fun profileNotFound()
 }
