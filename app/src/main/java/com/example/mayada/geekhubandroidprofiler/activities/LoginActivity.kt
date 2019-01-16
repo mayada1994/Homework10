@@ -1,4 +1,4 @@
-package com.example.mayada.geekhubandroidprofiler.ui.login
+package com.example.mayada.geekhubandroidprofiler.activities
 
 import android.content.Intent
 import android.graphics.PorterDuff
@@ -7,10 +7,11 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.mayada.geekhubandroidprofiler.R
 import com.example.mayada.geekhubandroidprofiler.network.AuthResponse
-import com.example.mayada.geekhubandroidprofiler.ui.main.MainActivity
+import com.example.mayada.geekhubandroidprofiler.presenters.LoginPresenter
+import com.example.mayada.geekhubandroidprofiler.views.LoginView
 import kotlinx.android.synthetic.main.activity_login.*
 
-class LoginActivity : AppCompatActivity(),  LoginView {
+class LoginActivity : AppCompatActivity(), LoginView {
 
 
     private val presenter by lazy {

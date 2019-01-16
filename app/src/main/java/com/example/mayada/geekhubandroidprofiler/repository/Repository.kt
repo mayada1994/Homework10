@@ -1,8 +1,8 @@
-package com.geekhub.retrofitexample.data.repository
+package com.example.mayada.geekhubandroidprofiler.repository
 
 import com.example.mayada.geekhubandroidprofiler.network.AuthResponse
-import com.geekhub.retrofitexample.data.model.GitHubResponse
-import com.geekhub.retrofitexample.data.network.GitHubService
+import com.example.mayada.geekhubandroidprofiler.network.GitHubResponse
+import com.example.mayada.geekhubandroidprofiler.services.GitHubService
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

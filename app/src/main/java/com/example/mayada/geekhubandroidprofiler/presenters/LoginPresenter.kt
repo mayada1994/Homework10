@@ -1,9 +1,10 @@
-package com.example.mayada.geekhubandroidprofiler.ui.login
+package com.example.mayada.geekhubandroidprofiler.presenters
 
 import android.util.Base64
 import android.util.Log
 import com.example.mayada.geekhubandroidprofiler.network.AuthResponse
-import com.geekhub.retrofitexample.data.repository.Repository
+import com.example.mayada.geekhubandroidprofiler.repository.Repository
+import com.example.mayada.geekhubandroidprofiler.views.LoginView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

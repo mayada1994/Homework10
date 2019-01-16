@@ -1,19 +1,12 @@
-package com.example.mayada.geekhubandroidprofiler.ui.main
+package com.example.mayada.geekhubandroidprofiler.presenters
 
-import android.support.v7.app.AppCompatActivity
-import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import com.example.mayada.geekhubandroidprofiler.R
+import com.example.mayada.geekhubandroidprofiler.entities.Item
+import com.example.mayada.geekhubandroidprofiler.views.MainView
 
-class MainActivity : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        val layoutManager = LinearLayoutManager(this)
-        layoutManager.orientation = LinearLayoutManager.VERTICAL
+class MainPresenter(val view: MainView) {
 
+    fun listItemSetting() {
         val items: ArrayList<Item> = ArrayList()
         items.add(Item("Довгаль Ольга", "olyadowgal"))
         //items.add(Item("Островський Дмитро", "dmitriyrash1k"))  GITLAB
@@ -31,11 +24,6 @@ class MainActivity : AppCompatActivity() {
         items.add(Item("Гуцуленко Дмитро", "boykod"))
         items.add(Item("Цапенко Юрій", "tsapenkoyuriy"))
 
-        val itemAdapter = ItemAdapter(items)
-
-        val userList = findViewById<RecyclerView>(R.id.profiles_recycler_view)
-        userList.layoutManager = layoutManager
-        userList.adapter = itemAdapter
-        userList.addItemDecoration(CustomItemDecoration(this))
+        view.setItemList(items)
     }
 }

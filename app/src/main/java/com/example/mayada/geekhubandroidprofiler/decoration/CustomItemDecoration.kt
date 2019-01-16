@@ -1,4 +1,4 @@
-package com.example.mayada.geekhubandroidprofiler.ui.main
+package com.example.mayada.geekhubandroidprofiler.decoration
 
 import android.content.Context
 import android.graphics.Canvas
@@ -7,11 +7,7 @@ import android.support.v7.widget.RecyclerView
 import com.example.mayada.geekhubandroidprofiler.R
 
 class CustomItemDecoration(context: Context) : RecyclerView.ItemDecoration() {
-    private val mDivider: Drawable
-
-    init {
-        mDivider = context.getResources().getDrawable(R.drawable.divider)
-    }
+    private val mDivider: Drawable = context.resources.getDrawable(R.drawable.divider)
 
     override fun onDrawOver(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
         val left = parent.paddingLeft

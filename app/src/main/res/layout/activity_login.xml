@@ -6,7 +6,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@drawable/profile_background"
-        tools:context=".ui.login.LoginActivity">
+        tools:context=".activities.LoginActivity">
 
     <ImageView
             android:layout_width="match_parent"
@@ -26,6 +26,7 @@
                 android:id="@+id/user_name_login_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="textPersonName"
                 android:hint="User Name"/>
 
         <EditText

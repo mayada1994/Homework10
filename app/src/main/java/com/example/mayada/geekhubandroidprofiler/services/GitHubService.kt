@@ -1,7 +1,7 @@
-package com.geekhub.retrofitexample.data.network
+package com.example.mayada.geekhubandroidprofiler.services
 
 import com.example.mayada.geekhubandroidprofiler.network.AuthResponse
-import com.geekhub.retrofitexample.data.model.GitHubResponse
+import com.example.mayada.geekhubandroidprofiler.network.GitHubResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Header

@@ -11,6 +11,6 @@
             android:layout_height="match_parent"
             android:id="@+id/profiles_recycler_view"
             android:scrollbars="vertical"
-            tools:context=".ui.main.MainActivity">
+            tools:context=".activities.MainActivity">
     </android.support.v7.widget.RecyclerView>
 </LinearLayout>

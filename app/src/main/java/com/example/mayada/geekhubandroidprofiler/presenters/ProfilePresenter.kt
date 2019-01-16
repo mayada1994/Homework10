@@ -1,8 +1,9 @@
-package com.geekhub.retrofitexample.ui.main
+package com.example.mayada.geekhubandroidprofiler.presenters
 
 import android.util.Log
-import com.geekhub.retrofitexample.data.model.GitHubResponse
-import com.geekhub.retrofitexample.data.repository.Repository
+import com.example.mayada.geekhubandroidprofiler.network.GitHubResponse
+import com.example.mayada.geekhubandroidprofiler.repository.Repository
+import com.example.mayada.geekhubandroidprofiler.views.ProfileView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

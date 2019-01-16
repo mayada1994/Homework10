@@ -1,7 +1,6 @@
-package com.geekhub.retrofitexample.data.model
+package com.example.mayada.geekhubandroidprofiler.network
 
 import com.google.gson.annotations.SerializedName
-
 
 data class GitHubResponse(
 
