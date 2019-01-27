@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.example.mayada.geekhubandroidprofiler.activities.ProfileActivity
 import com.example.mayada.geekhubandroidprofiler.R
+import com.example.mayada.geekhubandroidprofiler.activities.MainActivity
 import com.example.mayada.geekhubandroidprofiler.entities.Item
 
 class ItemAdapter(val items: ArrayList<Item>) : RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
@@ -36,7 +36,7 @@ class ItemAdapter(val items: ArrayList<Item>) : RecyclerView.Adapter<ItemAdapter
 
         init {
             itemView.setOnClickListener {
-                val intent = Intent(itemView.context, ProfileActivity::class.java)
+                val intent = Intent(itemView.context, MainActivity::class.java)
                 intent.putExtra("profileName", itemName.text)
                 intent.putExtra("profileLogin", itemLogin)
                 itemView.context.startActivity(intent)

@@ -3,7 +3,9 @@ package com.example.mayada.geekhubandroidprofiler.presenters
 import android.util.Log
 import com.example.mayada.geekhubandroidprofiler.network.GitHubResponse
 import com.example.mayada.geekhubandroidprofiler.repository.Repository
+import com.example.mayada.geekhubandroidprofiler.views.MainView
 import com.example.mayada.geekhubandroidprofiler.views.ProfileView
+import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -12,7 +14,7 @@ import java.lang.NullPointerException
 
 class ProfilePresenter(
     private val repository: Repository,
-    val view: ProfileView
+    val view: MainView
 
 ) {
 
