@@ -20,13 +20,13 @@ class MainActivity : AppCompatActivity(), MainView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.sliding_layout)
 
         presenter.listItemSetting()
         val layoutManager = LinearLayoutManager(this)
         layoutManager.orientation = LinearLayoutManager.VERTICAL
 
-        val itemAdapter = ItemAdapter(items)
+        val itemAdapter = ItemAdapter(items, this)
 
         val userList = findViewById<RecyclerView>(R.id.profiles_recycler_view)
         userList.layoutManager = layoutManager

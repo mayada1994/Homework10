@@ -1,16 +1,17 @@
 package com.example.mayada.geekhubandroidprofiler.adapters
 
-import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.example.mayada.geekhubandroidprofiler.activities.ProfileActivity
-import com.example.mayada.geekhubandroidprofiler.R
 import com.example.mayada.geekhubandroidprofiler.entities.Item
+import com.example.mayada.geekhubandroidprofiler.R
+import com.example.mayada.geekhubandroidprofiler.activities.MainActivity
+import com.example.mayada.geekhubandroidprofiler.activities.ProfileFragment
 
-class ItemAdapter(val items: ArrayList<Item>) : RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
+
+class ItemAdapter(val items: ArrayList<Item>, val activity: MainActivity) : RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         val view: View = LayoutInflater.from(viewGroup.context).inflate(R.layout.list_item, viewGroup, false)
@@ -30,18 +31,17 @@ class ItemAdapter(val items: ArrayList<Item>) : RecyclerView.Adapter<ItemAdapter
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        var itemNumber: TextView = itemView.findViewById(R.id.item_number)
-        var itemName: TextView = itemView.findViewById(R.id.item_name)
+        var itemNumber: TextView = itemView.findViewById(com.example.mayada.geekhubandroidprofiler.R.id.item_number)
+        var itemName: TextView = itemView.findViewById(com.example.mayada.geekhubandroidprofiler.R.id.item_name)
         lateinit var itemLogin:String
 
         init {
             itemView.setOnClickListener {
-                val intent = Intent(itemView.context, ProfileActivity::class.java)
-                intent.putExtra("profileName", itemName.text)
-                intent.putExtra("profileLogin", itemLogin)
-                itemView.context.startActivity(intent)
+                val fragment = ProfileFragment.newInstance(itemName.text.toString(), itemLogin)
+                val manager = activity.supportFragmentManager
+                val transaction = manager.beginTransaction().replace(R.id.dragLayout, fragment)
+                transaction.commit()
             }
         }
-
     }
 }

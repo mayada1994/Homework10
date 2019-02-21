@@ -6,8 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        android:background="@drawable/profile_background"
-        tools:context=".activities.ProfileActivity">
+        android:background="@drawable/profile_background">
 
     <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
